@@ -1,0 +1,48 @@
+html, body, * {
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 16px;
+  width: 100%;
+  font-family: 'Poppins';
+}
+
+.container{
+  margin: 2em auto;
+  width: 80%;
+  padding: 1.5em;
+  border: 1px solid #1a1a1a99;
+  border-radius: 0.5em;
+  color: #1a1a1a;
+}
+
+.editor {
+  padding: 1.5em;
+  margin-top: 1em;
+  box-shadow: 0 0 0.4em #1a1a1a99;
+  border-radius: 1em;
+  outline: none;
+  font-family: 'Lora';
+}
+
+.toolBar {
+  padding: 1.5em;
+  margin-top: 1em;
+  box-shadow: 0 0 0.4em #1a1a1a99;
+  border-radius: 1em;
+  outline: none;
+  display: flex;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.block {
+  outline: none;
+  background-color: #f2fefa;
+  margin-top: 0.4em;
+  padding: 0.5em;
+}
+.block:focus {
+  border: 0.1em solid #82beef;
+}
