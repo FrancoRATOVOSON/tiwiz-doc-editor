@@ -1,3 +1,3 @@
-# tiwiz-doc-editor
+# Tiwiz-doc editor
 
 It's the rich text editor part of the Tiwiz project.
