@@ -1,26 +1,40 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
-const webpack = require("webpack");
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
   entry: './src/index.tsx',
-  //devtool: 'inline-source-map',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ],
       },
       {
         test: /\.(js|mjs|jsx|ts|tsx)$/i,
         loader: 'babel-loader',
         exclude: /(node_modules|yarn|bower_components)/,
         options: {
-          presets: ["@babel/env"]
-        }
-      },{}
+          presets: ['@babel/env'],
+        },
+      },
+      {},
     ],
   },
   resolve: {
@@ -28,20 +42,20 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public/index.html'),
-      inject: false
+      template: path.resolve(__dirname, 'public/index.html'),
+      inject: false,
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new NodePolyfillPlugin()
+    new NodePolyfillPlugin(),
   ],
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname , 'dist'),
-    clean: true
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   devServer: {
     static: './dist',
     hot: true,
-    port: 3000
+    port: 3000,
   },
-};
+}
