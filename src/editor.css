@@ -1,0 +1,29 @@
+@layer components {
+  .header-one {
+    @apply text-5xl font-bold;
+  }
+
+  .header-two {
+    @apply text-4xl font-semibold;
+  }
+
+  .header-three {
+    @apply text-2xl font-medium;
+  }
+
+  .header-four {
+    @apply text-lg font-medium;
+  }
+
+  .header-five {
+    @apply text-sm font-medium;
+  }
+
+  .header-six {
+    @apply text-xs font-medium;
+  }
+
+  .paragraph {
+    @apply text-base font-normal;
+  }
+}

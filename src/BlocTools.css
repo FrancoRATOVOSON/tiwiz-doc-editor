@@ -1,0 +1,6 @@
+@layer components {
+  .menu-show {
+    @apply flex flex-row absolute bg-white;
+    z-index: 1;
+  }
+}

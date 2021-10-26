@@ -1,15 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import EditorContainer from './EditorContainer';
-
-import "./index.css"
+// eslint-disable-next-line no-use-before-define
+import React, { useEffect } from 'react'
+import ReactDOM from 'react-dom'
+import { hideTitleList } from './BlocTools'
+import EditorContainer from './EditorContainer'
+import './index.css'
 
 export default function App() {
+  useEffect(() => {
+    window.addEventListener('mousedown', () => hideTitleList())
+  }, [])
+
   return (
     <>
-      <EditorContainer/>
+      <EditorContainer />
     </>
   )
 }
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'))
