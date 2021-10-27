@@ -1,9 +1,11 @@
 // eslint-disable-next-line no-use-before-define
 import React, { MouseEvent } from 'react'
 import './BlocTools.css'
-import { BlocTypeList, TitleList } from './BlocTypes'
+import { BlocTypeList, TitleList } from './utils/BlocTypes'
 import Title from './assets/icons/components/Titles/Title'
 import ToolButton from './components/ToolButton'
+import ImageIcon from './assets/icons/components/Blocs/ImageIcon'
+import HiddenInput from './components/HiddenInput'
 
 interface BlocToolsPropType {
   className: string
@@ -79,6 +81,17 @@ export default function BlocTools(props: BlocToolsPropType) {
         <Title />
       </ToolButton>
       <BlockListView />
+      <ToolButton
+        title="Image"
+        onMouseDown={(event: MouseEvent) => {
+          event.preventDefault()
+
+          document.getElementById('fileUpload')?.click()
+        }}
+      >
+        <ImageIcon />
+        <HiddenInput />
+      </ToolButton>
     </div>
   )
 }
