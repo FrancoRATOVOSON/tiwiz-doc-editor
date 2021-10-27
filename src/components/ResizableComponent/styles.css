@@ -1,0 +1,19 @@
+@layer components {
+  .ResizableComponent {
+    @apply flex justify-center items-center align-middle text-center;
+    width: fit-content
+  }
+
+  .ContentBox {
+    @apply z-0;
+  }
+
+  .DragButton {
+    @apply cursor-move outline-none border-none absolute;
+  }
+}
+
+.ContentBox * {
+  width: 100%;
+  height: 100%
+}
