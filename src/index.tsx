@@ -1,7 +1,6 @@
-// eslint-disable-next-line no-use-before-define
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
-import { hideTitleList } from './BlocTools'
+import { hideTitleList } from './components/Toolbar/BlocTools'
 import EditorContainer from './EditorContainer'
 import './index.css'
 

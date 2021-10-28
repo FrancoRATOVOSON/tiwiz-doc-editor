@@ -1,10 +1,10 @@
 @layer components {
   .header-one {
-    @apply text-5xl font-bold;
+    @apply text-5xl font-bold mb-6;
   }
 
   .header-two {
-    @apply text-4xl font-semibold;
+    @apply text-4xl font-semibold mb-4;
   }
 
   .header-three {
@@ -24,6 +24,10 @@
   }
 
   .paragraph {
+    @apply text-base font-normal;
+  }
+
+  .unstyled {
     @apply text-base font-normal;
   }
 }

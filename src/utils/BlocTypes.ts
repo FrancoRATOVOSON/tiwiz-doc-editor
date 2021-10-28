@@ -1,6 +1,5 @@
 import { AtomicBlockUtils, ContentBlock, EditorState } from 'draft-js'
-import { ReactElement } from 'react'
-import { guidGenerator } from '../utils'
+import { guidGenerator, ToolOptionType } from '../utils'
 import Code from '../assets/icons/components/Blocs/Code'
 import OrderedList from '../assets/icons/components/Blocs/OrderedList'
 import Paragraph from '../assets/icons/components/Blocs/Paragraph'
@@ -12,12 +11,6 @@ import Title3 from '../assets/icons/components/Titles/Title3'
 import Title4 from '../assets/icons/components/Titles/Title4'
 import Title5 from '../assets/icons/components/Titles/Title5'
 import Title6 from '../assets/icons/components/Titles/Title6'
-
-export interface ToolOptionType {
-  label: string
-  style: string
-  icon: () => ReactElement
-}
 
 export const TitleList: ToolOptionType[] = [
   {
@@ -55,7 +48,7 @@ export const TitleList: ToolOptionType[] = [
 export const BlocTypeList: ToolOptionType[] = [
   {
     label: 'Paragraph',
-    style: 'paragraph',
+    style: 'unstyled', // paragraph //unstyled
     icon: Paragraph,
   },
   {

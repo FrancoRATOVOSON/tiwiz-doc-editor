@@ -1,21 +1,22 @@
 import React, { useState, createRef } from 'react'
-import { Map } from 'immutable'
 import {
   ContentBlock,
   DefaultDraftBlockRenderMap,
   DraftEditorCommand,
   DraftHandleValue,
+  DraftStyleMap,
   Editor,
   EditorState,
   RichUtils,
 } from 'draft-js'
-import EditorToolbar from './EditorToolbar'
+import { Map } from 'immutable'
 import { blockStyling } from './utils/BlocTypes'
 import 'draft-js/dist/Draft.css'
 import './editor.css'
 import MediaComponent from './components/MediaComponent'
 import EditorStateContext from './contexts/editorStateContext'
 import ResizableComponent from './components/ResizableComponent'
+import EditorToolbar from './components/Toolbar/EditorToolbar'
 
 function mediaRenderer(contentBlock: ContentBlock) {
   const type = contentBlock.getType()
@@ -35,6 +36,21 @@ const blockRendeMap = Map({
     wrapper: <ResizableComponent />,
   },
 })
+
+const customStylesMap: DraftStyleMap = {
+  LEFTALIGN: {
+    textAlign: 'left',
+  },
+  RIGHTALIGN: {
+    textAlign: 'right',
+  },
+  CENTERALIGN: {
+    textAlign: 'center',
+  },
+  JUSTIFYALIGN: {
+    textAlign: 'justify',
+  },
+}
 
 const extendedRenderMap = DefaultDraftBlockRenderMap.merge(blockRendeMap)
 
@@ -78,6 +94,7 @@ export default function EditorContainer() {
             blockStyleFn={blockStyling}
             blockRendererFn={mediaRenderer}
             blockRenderMap={extendedRenderMap}
+            customStyleMap={customStylesMap}
           />
         </div>
       </div>

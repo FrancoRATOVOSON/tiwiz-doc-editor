@@ -1,16 +1,11 @@
-// eslint-disable-next-line no-use-before-define
 import React, { MouseEvent } from 'react'
+import ImageIcon from '../../assets/icons/components/Blocs/ImageIcon'
+import Title from '../../assets/icons/components/Titles/Title'
+import { BlocTypeList, TitleList } from '../../utils/BlocTypes'
+import HiddenInput from '../HiddenInput'
+import ToolButton from '../ToolButton'
 import './BlocTools.css'
-import { BlocTypeList, TitleList } from './utils/BlocTypes'
-import Title from './assets/icons/components/Titles/Title'
-import ToolButton from './components/ToolButton'
-import ImageIcon from './assets/icons/components/Blocs/ImageIcon'
-import HiddenInput from './components/HiddenInput'
-
-interface BlocToolsPropType {
-  className: string
-  clickAction: (_: string) => any
-}
+import { ToolButtonPropType } from './EditorToolbar'
 
 const toggleTitleList = (show: boolean) => {
   const titleList = document.getElementById('titleList')
@@ -26,7 +21,7 @@ export const showTitleList = () => toggleTitleList(true)
 
 export const hideTitleList = () => toggleTitleList(false)
 
-export default function BlocTools(props: BlocToolsPropType) {
+export default function BlocTools(props: ToolButtonPropType) {
   const { className, clickAction } = props
 
   const TitleListView = () => (

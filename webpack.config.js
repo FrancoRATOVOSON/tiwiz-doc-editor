@@ -5,6 +5,7 @@ const webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
+  watch: true,
   entry: './src/index.tsx',
   devtool: 'inline-source-map',
   module: {
